@@ -1,13 +1,14 @@
 # Music Genre Classification using Multi-Channel Convolutional Neural Network (CNN) and Long Short-Term Memory (LSTM)
 These codes are written as part of a project for Music Genre Classification for CS4347 Sound and Music Computing module. The dataset used is provided by the module. 
 
-`Disclaimer`: Note that the codes written in this repository are based on [1] and [2], however they are not meant to be representative of the research papers.
-
 This repository contains 2 source directories:
 * Multi-Channel Convolutional Neural Network (MCC)
 * Multi-Channel Convolutional Neural Network and Long Short-Term Memory (MCCLSTM)
 
 Both directories contained their respective preprocessing script, `preprocessing.py` and training script, `train.py`.
+
+## Disclaimer
+Note that the codes written in this repository are based on [1] and [2], however they are not meant to be representative of the research papers.
 
 ## Usage
 The code can be run using the following command to generate the numpy files for the dataset.
