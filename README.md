@@ -27,13 +27,11 @@ Based on the given training data, 10-fold cross validation with a split of 80%-1
 | 3-Channel MCCLSTM             |       62.10 ± 2.00        |
 
 ## Usage
-The code can be run using the following command to generate the numpy files for the dataset.
+The code can be run using the following command to generate the numpy files from the dataset.
 
 `python preprocessing.py`
 
-For training of MCC and MCCLSTM, the following command are used. 
-
-Format: [SCRIPT] [TRAIN] [CHANNEL]
+For training of MCC and MCCLSTM, the following command are used. Format: [PYTHON] [SCRIPT] [CHANNEL]
 
 `python train.py 2`
 
