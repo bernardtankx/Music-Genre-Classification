@@ -11,7 +11,7 @@ Both directories contained their respective preprocessing script, `preprocessing
 Note that the codes written in this repository are based on [1] and [2], however they are not meant to be representative of the research papers.
 
 ## Introduction
-Four variants of multichannel CNN model are implemented. A 2-channel and a 3-channel for both MCC and MCCLSTM. Each channel of the CNN attempt to model different aspect of the music. The channels used are pitch, tempo and bass. Pitch and tempo channel was first proposed in [1]. Bass channel was subsequently added in [2] as part of their initiative and produced better performance when compared to prior.
+In total, four variants of multichannel CNN model are implemented. A 2-channel and a 3-channel variants for both MCC and MCCLSTM. Each channel of the CNN attempt to model different aspect of the music. The channels modelled in the CNNs are pitch (P), tempo (T) and bass (B). Pitch and tempo channel was first proposed in [1]. Bass channel was subsequently added in [2] as part of their initiative and produced better performance when compared to prior even before adding LSTM to the CNN. The 2-channel variant includes pitch and tempo while the 3-channel includes pitch, tempo and bass. 
 
 ## Preprocessing
 40 bands mel-spectrograms are derived from STFT- spectrogram computed with a Blackman Harris window of 2048 samples, with 50% overlap, at 44.1 kHz. All of the phases extracted are discarded. Dynamic range compression is applied to the input spectrograms and the resulting spectrograms are normalized so that the entire corpus have zero mean with a variance of one. For MCC, each spectrogram are then divided into 16 chunks of 40 x 80. Each of these chunks will be assigned a genre label. The excess which does not make up a chunk are discarded. No changes are made to the spectrograms for MCCLSTM.
@@ -21,10 +21,12 @@ Based on the given training data, 10-fold cross validation with a split of 80%-1
 
 | Convolutional Neural Network  | Accuracy: mean ± std (%)  |
 |-------------------------------|:-------------------------:|
-| 2-Channel MCC                 |       78.60 ± 2.11        |
-| 3-Channel MCC                 |       80.30 ± 1.91        |
-| 2-Channel MCCLSTM             |       60.00 ± 1.40        |
-| 3-Channel MCCLSTM             |       62.10 ± 2.00        |
+| 2-Channel MCC (P + T)         |       78.60 ± 2.11        |
+| 3-Channel MCC (P + T + B)     |       80.30 ± 1.91        |
+| 2-Channel MCCLSTM (P + T)     |       60.00 ± 1.40        |
+| 3-Channel MCCLSTM (P + T + B) |       62.10 ± 2.00        |
+
+Note: The MCCLSTM did not performed comparably to [2].
 
 ## Usage
 The code can be run using the following command to generate the numpy files from the dataset.
