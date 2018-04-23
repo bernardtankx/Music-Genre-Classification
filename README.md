@@ -39,6 +39,9 @@ For training of MCC and MCCLSTM, the following command are used. Format: [PYTHON
 
 `python train.py 3`
 
+## Credits
+The code that supported multi-GPU data-parallelism training in this repository were obtained from [keras-multi-gpu](https://github.com/rossumai/keras-multi-gpu). There are no special reasons why I chose this compared to Keras's [multi_gpu_model](https://keras.io/utils/#multi_gpu_model).
+
 ## References
 [1] Pons, Jordi, Thomas Lidy, and Xavier Serra. "Experimenting with musically motivated     convolutional neural networks." Content-Based Multimedia Indexing (CBMI), 2016 14th International Workshop on (2016): 1-6
 
